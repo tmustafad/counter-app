@@ -13,6 +13,16 @@ class App extends Component {
     ],
   };
 
+  constructor() {
+    super();
+    console.log("App-Constructor");
+  }
+
+  componentDidMount() {
+    //ajax call
+    console.log("App-mounted");
+  }
+
   handleDelete = (counterId) => {
     const counters = this.state.counters.filter((c) => c.id !== counterId);
     this.setState({ counters });
@@ -34,6 +44,7 @@ class App extends Component {
     this.setState({ counters });
   };
   render() {
+    console.log("App-rendered");
     return (
       <React.Fragment>
         <NavBar
